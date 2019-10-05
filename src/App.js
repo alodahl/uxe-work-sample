@@ -4,15 +4,18 @@ import getControls from './api'
 import { Redirect, Route, BrowserRouter as Router } from 'react-router-dom'
 import ControlList from './components/ControlList';
 import ControlMain from './components/ControlMain';
+import Header from './components/Header'
+import FilterBar from './components/FilterBar'
+import Controls from './components/Controls'
 
 class App extends Component {
   state = {
     controls: null
   }
-  
+
   componentDidMount() {
-    // We have provided a simple getControls() API that will load controls.json 
-    // for you.  getControls() imposes an artificial delay of 1500ms.  
+    // We have provided a simple getControls() API that will load controls.json
+    // for you.  getControls() imposes an artificial delay of 1500ms.
     getControls().then(controls => this.setState({ controls }))
   }
 
@@ -22,6 +25,9 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+        <Header/>
+        <FilterBar/>
+        <Controls>
           { controls &&
             <>
               <ControlList controls={controls} />
@@ -35,6 +41,7 @@ class App extends Component {
               )} />
             </>
           }
+        </Controls>
         </div>
       </Router>
     );

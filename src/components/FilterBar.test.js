@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import FilterBar from './FilterBar';
+import {shallow} from 'enzyme';
+var {expect} = require('chai');
 
 
 function render(comp) {
@@ -9,6 +11,8 @@ function render(comp) {
   ReactDOM.unmountComponentAtNode(div);
 }
 
-it('renders without crashing', () => {
-  render(<App/>);
+describe('Filter Bar', () => {
+  it('renders without crashing', () => {
+    render(<FilterBar />);
+  });
 });
