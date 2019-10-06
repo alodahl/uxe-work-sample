@@ -7,7 +7,7 @@ import ControlMain from './ControlMain';
 const controlSectionStyle = { backgroundColor: '#fff', width: "50%", height: "100%", boxSizing: "border-box" };
 const controlListContainerStyle = { ...controlSectionStyle, float: 'left', borderTop: "1px solid #ccc", borderRight: "1px solid #ccc" };
 const controlHeader = { backgroundColor: '#eee', margin: 0};
-const controlMainContainerStyle = { width: "50%", backgroundColor: 'lightblue', float: 'right', height: "100%" };
+const controlMainContainerStyle = { width: "50%", backgroundColor: '#EBF4FD', float: 'right', height: "100%" };
 const controlMainStyle = {backgroundColor: '#fff', border: "1px solid #ccc", borderRadius:"5px", margin: "10px"};
 const Controls = props => {
   const [controls, setControls] = useState(null);

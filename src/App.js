@@ -9,7 +9,7 @@ const App = () => {
 
     return (
       <Router>
-        <div className="App" style={{backgroundColor: "lightblue"}}>
+        <div className="App" style={{color: "#555"}}>
           <Header/>
           <FilterBar/>
           <Controls/>
