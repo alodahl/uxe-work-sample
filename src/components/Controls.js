@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import getControls from '../api'
-import { Redirect, Route, BrowserRouter as Router } from 'react-router-dom'
+import { Redirect, Route } from 'react-router-dom'
 import ControlList from './ControlList';
 import ControlMain from './ControlMain';
 
-const sectionStyle = { backgroundColor: '#fff' };
-
-const controlMainStyle = { ...sectionStyle, backgroundColor: '#ccc' };
-
+const controlSectionStyle = { backgroundColor: '#fff', width: "50%", height: "100%", boxSizing: "border-box" };
+const controlListContainerStyle = { ...controlSectionStyle, float: 'left', borderTop: "1px solid #ccc", borderRight: "1px solid #ccc" };
+const controlHeader = { backgroundColor: '#eee', margin: 0};
+const controlMainContainerStyle = { width: "50%", backgroundColor: 'lightblue', float: 'right', height: "100%" };
+const controlMainStyle = {backgroundColor: '#fff', border: "1px solid #ccc", borderRadius:"5px", margin: "10px"};
 const Controls = props => {
   const [controls, setControls] = useState(null);
   useEffect(() => {
@@ -17,11 +18,11 @@ const Controls = props => {
   })
 
   return (
-      <div className="controls" >
+      <div className="controls" style={{height: "100%"}}>
         { controls &&
           <>
-            <section style={sectionStyle}>
-              <h2>
+            <section style={controlListContainerStyle}>
+              <h2 style={controlHeader}>
                 Controls
               </h2>
               <ControlList controls={controls} />
@@ -29,10 +30,12 @@ const Controls = props => {
                 <Redirect to={{ pathname: `/controls/${controls[0].id}` }} />
               )} />
             </section>
-            <section style={controlMainStyle}>
-              <Route path='/controls/:controlId' render={({ match }) => (
-                <ControlMain control={controls.find(c => c.id.toString() === match.params.controlId)} />
+            <section style={controlMainContainerStyle}>
+              <div style={controlMainStyle}>
+                <Route path='/controls/:controlId' render={({ match }) => (
+                  <ControlMain control={controls.find(c => c.id.toString() === match.params.controlId)} />
               )} />
+              </div>
             </section>
           </>
         }
