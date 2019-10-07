@@ -14,15 +14,16 @@ code {
     monospace;
 }
 
-.list-item:hover {
-  background-color: #EBF4FD;
-}
-
 .filter-button {
   border: 1px solid #ccc;
   border-right: none;
   fontSize: 10px;
   margin: 0;
+  height: 25px;
+}
+
+.vertical-align * {
+  vertical-align: middle;
 }
 
 .filter-button:first-of-type {
@@ -41,4 +42,14 @@ code {
 .filter-button:focus {
   background-color: #EBF4FD;
   outline: none;
+}
+
+.list-item:hover {
+  background-color: #EBF4FD;
+}
+
+.uppercase-title {
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700;
 }
