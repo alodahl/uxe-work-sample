@@ -17,3 +17,28 @@ code {
 .list-item:hover {
   background-color: #EBF4FD;
 }
+
+.filter-button {
+  border: 1px solid #ccc;
+  border-right: none;
+  fontSize: 10px;
+  margin: 0;
+}
+
+.filter-button:first-of-type {
+  border-radius: 3px 0 0 3px;
+}
+
+.filter-button:last-of-type {
+  border-right: 1px solid #ccc;
+  border-radius: 0 3px 3px 0;
+}
+
+.filter-button:hover {
+  background-color: #D1E4FF;
+}
+
+.filter-button:focus {
+  background-color: #EBF4FD;
+  outline: none;
+}
