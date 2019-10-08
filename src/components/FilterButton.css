@@ -1,0 +1,26 @@
+.filter-button {
+  border: 1px solid #ccc;
+  border-right: none;
+  fontSize: 10px;
+  margin: 0;
+  height: 25px;
+}
+
+.filter-button:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.filter-button:last-of-type {
+  border-right: 1px solid #ccc;
+  border-radius: 0 4px 4px 0;
+}
+
+.filter-button:hover {
+  background-color: #D1E4FF;
+  color: #007CF9;
+}
+
+.filter-button:focus {
+  background-color: #EBF4FD;
+  outline: none;
+}

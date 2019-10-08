@@ -4,24 +4,37 @@ import { Redirect, Route } from "react-router-dom";
 import ControlList from "./ControlList";
 import ControlMain from "./ControlMain";
 
-const controlSectionStyle = {
+const controlContainerStyle = {
   backgroundColor: "#fff",
   width: "50%",
   height: "100%",
-  boxSizing: "border-box"
+  overflow: "hidden",
+  float: "left"
 };
 const controlListContainerStyle = {
-  ...controlSectionStyle,
+  ...controlContainerStyle,
+  boxSizing: "border-box",
+  width: "50%",
+  display: "inline-block",
   float: "left",
-  borderTop: "1px solid #ccc",
   borderRight: "1px solid #ccc"
 };
-const controlHeader = { backgroundColor: "#eee", margin: 0, padding: "10px 15px" };
+const controlHeader = {
+  backgroundColor: "#eee",
+  margin: 0,
+  padding: "10px 20px"
+};
+const controlSubheaderContainer = { padding: "10px 20px", borderBottom: "1px solid #ccc"};
+const controlSubheader = { margin: 0, display: "inline", marginRight: "30px" };
+const controlSubheaderLast = { display: "inline", float: "right", margin: "5px"};
 const controlMainContainerStyle = {
+  boxSizing: "border-box",
+  display: "inline-block",
   width: "50%",
   backgroundColor: "#EBF4FD",
-  float: "right",
-  height: "100%"
+  margin: 0,
+  padding: 0,
+  height: "3985px"
 };
 const controlMainStyle = {
   backgroundColor: "#fff",
@@ -42,8 +55,19 @@ const Controls = props => {
     <div className="controls" style={{ height: "100%" }}>
       {controls && (
         <>
-          <section style={controlListContainerStyle}>
-            <h2 className="uppercase-title" style={controlHeader}>Controls</h2>
+          <div style={controlListContainerStyle}>
+            <h2 className="uppercase-title" style={controlHeader}>
+              Controls
+            </h2>
+            <div style={controlSubheaderContainer}>
+              <h3 className="uppercase-title" style={controlSubheader}>
+                Control
+              </h3>
+              <h3 className="uppercase-title" style={controlSubheader}>
+                Description
+              </h3>
+              <h3 className="uppercase-title" style={controlSubheaderLast}>Status</h3>
+            </div>
             <ControlList controls={controls} />
             <Route
               exact
@@ -52,8 +76,8 @@ const Controls = props => {
                 <Redirect to={{ pathname: `/controls/${controls[0].id}` }} />
               )}
             />
-          </section>
-          <section style={controlMainContainerStyle}>
+          </div>
+          <div style={controlMainContainerStyle}>
             <div style={controlMainStyle}>
               <Route
                 path="/controls/:controlId"
@@ -66,9 +90,10 @@ const Controls = props => {
                 )}
               />
             </div>
-          </section>
+          </div>
         </>
       )}
+      <div style={{ clear: "both" }} />
     </div>
   );
 };
