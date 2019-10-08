@@ -9,8 +9,12 @@ const filterBarStyle = {
   borderTop: "1px solid #ccc",
   borderBottom: "1px solid #ccc",
   fontSize: "10px",
-  padding: "5px 15px"
+  padding: "5px 15px",
+  position: "relative",
+  zIndex: "3",
+  boxShadow: "1px 1px 1px rgba(0, 0, 0, .2)"
 };
+
 const filterHeaderStyle = {
   margin: 0,
   display: "inline",

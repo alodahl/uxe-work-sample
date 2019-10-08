@@ -17,7 +17,10 @@ const controlListContainerStyle = {
   width: "50%",
   display: "inline-block",
   float: "left",
-  borderRight: "1px solid #ccc"
+  zIndex: "1",
+  borderRight: "1px solid #ccc",
+  position: "relative",
+  boxShadow: "1px 1px 1px rgba(0, 0, 0, .2)"
 };
 const controlHeader = {
   backgroundColor: "#eee",
@@ -34,13 +37,15 @@ const controlMainContainerStyle = {
   backgroundColor: "#EBF4FD",
   margin: 0,
   padding: 0,
-  height: "3985px"
+  height: "3985px",
+  zIndex: "0",
 };
 const controlMainStyle = {
   backgroundColor: "#fff",
   border: "1px solid #ccc",
   borderRadius: "5px",
-  margin: "10px"
+  margin: "10px",
+  boxShadow: "1px 1px 1px rgba(0, 0, 0, .2)"
 };
 
 const Controls = props => {
