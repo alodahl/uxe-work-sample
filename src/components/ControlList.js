@@ -31,13 +31,13 @@ const listItemStatusStyle = {
 const ControlList = ({ controls }) => (
   <ul style={listStyle}>
     {controls.map(c => (
-      <li
-        tabIndex="0"
-        key={c.id}
-        style={listItemStyle}
-        className="list-item vertical-align"
-      >
-        <Link to={`/controls/${c.id}`} style={listItemLinkStyle}>
+      <Link to={`/controls/${c.id}`} style={listItemLinkStyle}>
+        <li
+          tabIndex="0"
+          key={c.id}
+          style={listItemStyle}
+          className="list-item vertical-align"
+        >
           <span style={listItemNameStyle} className="uppercase-title">
             {c.name}
           </span>
@@ -45,8 +45,8 @@ const ControlList = ({ controls }) => (
           <div style={listItemStatusStyle} className="vertical-align">
             {status(c)}
           </div>
-        </Link>
-      </li>
+          </li>
+      </Link>
     ))}
   </ul>
 );
