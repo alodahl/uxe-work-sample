@@ -17,3 +17,6 @@ To run the app:
 yarn start
 ```
 
+### Screen Shot 
+
+![App Screen Shot](https://github.com/alodahl/uxe-work-sample/blob/master/Screen%20Shot%202019-10-09%20at%208.23.14%20AM.png)
